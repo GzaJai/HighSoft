@@ -8,21 +8,24 @@ const toggleShow = (seccion) => {
     .classList.remove("section-wrap-show");
   seccion.classList.add("section-wrap-show");
   seccion.classList.remove("section-wrap-hidden");
-  toggleSidebar();
 };
 
 // Mostrar Inicio //
 const inicioDiv = document.querySelector("#incioWrap");
 document
   .querySelector("#inicioShow")
-  .addEventListener("click", () => toggleShow(inicioDiv));
+  .addEventListener("click", () => {
+    toggleShow(inicioDiv);
+    toggleSidebar();
+  });
 
 // Mostrar Transferir Dinero //
 const toggleTransferShowButton = document.querySelector("#transferShow");
 const transferFormDiv = document.querySelector("#transferFormWrap");
-toggleTransferShowButton.addEventListener("click", () =>
+toggleTransferShowButton.addEventListener("click", () => {
   toggleShow(transferFormDiv)
-);
+  toggleSidebar();
+});
 document
   .querySelector("#accesoRapidoTransferencia")
   .addEventListener("click", () => {
@@ -34,7 +37,10 @@ const historyDiv = document.querySelector("#historyPanelWrap");
 const showMovementsHistory = document.querySelector(
   "#historialMovimientosShow"
 );
-showMovementsHistory.addEventListener("click", () => toggleShow(historyDiv));
+showMovementsHistory.addEventListener("click", () => {
+  toggleShow(historyDiv);
+  toggleSidebar();
+});
 document
   .querySelector("#accesoRapidoMovimientos")
   .addEventListener("click", () => {
@@ -44,9 +50,10 @@ document
 // Mostrar Convertidor Divisas //
 const showConvertirDivisa = document.querySelector("#cambioDivisasBtn");
 const conversionDivisaDiv = document.querySelector("#seccionConvertirMoneda");
-showConvertirDivisa.addEventListener("click", () =>
-  toggleShow(conversionDivisaDiv)
-);
+showConvertirDivisa.addEventListener("click", () =>{
+  toggleShow(conversionDivisaDiv);
+  toggleSidebar();
+});
 document
   .querySelector("#accesoRapidoConvertir")
   .addEventListener("click", () => {
@@ -56,7 +63,10 @@ document
 // Mostrar Prestamos
 const showLoanSection = document.querySelector("#loanSectionBtn");
 const loanSectionDiv = document.querySelector("#seccionPrestamos");
-showLoanSection.addEventListener("click", () => toggleShow(loanSectionDiv));
+showLoanSection.addEventListener("click", () =>{ 
+  toggleShow(loanSectionDiv);
+  toggleSidebar();
+});
 document
   .querySelector("#accesoRapidoPrestamo")
   .addEventListener("click", () => {
@@ -82,6 +92,9 @@ document
   // Mostrar Pagar servicios
 const showPayServicesBtn = document.querySelector("#payServicesBtn");
 const payServicesDiv = document.querySelector("#payServicesSection");
-showPayServicesBtn.addEventListener("click", () => toggleShow(payServicesDiv));
+showPayServicesBtn.addEventListener("click", () => {
+  toggleShow(payServicesDiv);
+  toggleSidebar();
+});
 
 
