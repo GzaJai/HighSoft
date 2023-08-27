@@ -6,7 +6,7 @@ const btnPayXGP = document.querySelector("#btnPayServiceXGP");
 
 function payService (monto, service){
   if(service==btnPayPSP||service==btnPayXGP){
-    alert("Este servicios estan pagos. Podes seguis jugando tranqui")
+    alert("Este servicios esta pago. Podes seguis jugando tranqui")
     return}
     saldoDisp = saldoDisp - monto;
     updateSaldo();
