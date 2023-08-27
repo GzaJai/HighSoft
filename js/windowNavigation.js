@@ -65,9 +65,21 @@ document
 document
   .querySelector("#loanImg")
   .addEventListener("click", () => {
-    toggleShow(loanSectionDiv);
+    document
+    .querySelector(".section-wrap-show")
+    .classList.add("section-wrap-hidden");
+  document
+    .querySelector(".section-wrap-show")
+    .classList.remove("section-wrap-show");
+    loanSectionDiv.classList.add("section-wrap-show");
+    loanSectionDiv.classList.remove("section-wrap-hidden");
+    window.scrollTo({
+      top: 0, 
+      behavior: "smooth"
+    })
   });
-  // Mostrar Prestamos
+
+  // Mostrar Pagar servicios
 const showPayServicesBtn = document.querySelector("#payServicesBtn");
 const payServicesDiv = document.querySelector("#payServicesSection");
 showPayServicesBtn.addEventListener("click", () => toggleShow(payServicesDiv));
